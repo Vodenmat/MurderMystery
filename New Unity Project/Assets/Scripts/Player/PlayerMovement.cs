@@ -9,7 +9,14 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (SceneManager.GetActiveScene().name == "Lobby" && PlayerPrefs.GetInt("StairsTouched") == 1)
+        {
+            transform.position = new Vector3(0, 23.92f, 0);
+        }
+        else
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
     }
 
     // Update is called once per frame
@@ -28,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Stairs")
         {
+            PlayerPrefs.SetInt("StairsTouched", 1);
             if (SceneManager.GetActiveScene().name == "Lobby")
             {
                 SceneManager.LoadScene("Hallway");
@@ -35,6 +43,13 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 SceneManager.LoadScene("Lobby");
+            }
+        }
+        if (collision.gameObject.tag == "NerdDoor")
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                SceneManager.LoadScene("NerdRoom");
             }
         }
     }

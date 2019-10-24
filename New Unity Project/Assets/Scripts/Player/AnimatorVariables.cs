@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class AnimatorVariables : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,11 +13,9 @@ public class StartButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void OnButtonClick()
-    {
-        PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("Lobby");
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        GetComponent<Animator>().SetFloat("x", x);
+        GetComponent<Animator>().SetFloat("y", y);
     }
 }
