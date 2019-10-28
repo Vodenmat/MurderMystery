@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: 7b9575e8e60fdbb44b119f21af489516
+guid: 77211475f10f6774a9458a7aaa329a28
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2510476293373519475
-    second: New Piskel_0
+      213: -2818633095551857663
+    second: DoorAndStairs_0
   - first:
-      213: 627625725489826318
-    second: New Piskel_1
-  - first:
-      213: 6338068570567419226
-    second: New Piskel_2
-  - first:
-      213: -4309738878335270719
-    second: New Piskel_3
-  - first:
-      213: 7920555144810264317
-    second: New Piskel_4
+      213: -7218828024288534948
+    second: DoorAndStairs_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -78,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -90,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,49 +92,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d1c4c3789c4c974cbe2328b47f15d41
-      internalID: -2510476293373519475
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a8471211b4da914eab0ad3f749575d9
-      internalID: 627625725489826318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel_2
+      name: DoorAndStairs_0
       rect:
         serializedVersion: 2
         x: 0
@@ -157,35 +106,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb606f6010590b949b78208807711b1a
-      internalID: 6338068570567419226
+      spriteID: 7601a65149d76d240ab1324cc46f555e
+      internalID: -2818633095551857663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3185770e9231e14e9d04196b85db099
-      internalID: -4309738878335270719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel_4
+      name: DoorAndStairs_1
       rect:
         serializedVersion: 2
         x: 0
@@ -199,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6fa46094361188499d86fbc7692d877
-      internalID: 7920555144810264317
+      spriteID: 6a155495bc26c3b458ae8b3e4e944cb0
+      internalID: -7218828024288534948
       vertices: []
       indices: 
       edges: []

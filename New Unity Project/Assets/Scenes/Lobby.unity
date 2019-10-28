@@ -248,18 +248,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.008567512, y: -0.0013961717}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.35978812, y: 0.3192116}
   m_EdgeRadius: 0
 --- !u!212 &334278473
 SpriteRenderer:
@@ -299,12 +299,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -7218828024288534948, guid: 77211475f10f6774a9458a7aaa329a28,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -317,13 +318,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334278471}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 28.51, z: 0}
-  m_LocalScale: {x: 30, y: 5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.109, y: 27.97, z: 0}
+  m_LocalScale: {x: 13.3, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1022948447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,6 +3625,8 @@ GameObject:
   - component: {fileID: 2119939203}
   - component: {fileID: 2119939208}
   - component: {fileID: 2119939207}
+  - component: {fileID: 2119939205}
+  - component: {fileID: 2119939204}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -3645,6 +3648,57 @@ Transform:
   m_Father: {fileID: 1812500820}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &2119939204
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119939202}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.0086834, y: 5.0209303}
+  - {x: -1.9896606, y: 10.007152}
+  - {x: -2.9788926, y: 9.990559}
+  - {x: -3.0008504, y: 5.010857}
+  - {x: -2.0051506, y: 5.0142603}
+  - {x: -2.0023553, y: 5.0355883}
+--- !u!68 &2119939205
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119939202}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 2.3851368, y: -2.3552513}
+  - {x: 2.3914711, y: 11.625966}
+  - {x: 16.39896, y: 11.615757}
+  - {x: 16.409142, y: 25.41442}
+  - {x: 2.385951, y: 25.38015}
+  - {x: 2.3942156, y: 28.99935}
+  - {x: -2.398057, y: 28.99937}
+  - {x: -2.3788824, y: 12.399051}
+  - {x: -5.374696, y: 12.414569}
+  - {x: -5.3514786, y: 4.5972223}
+  - {x: -2.4171062, y: 4.6422076}
+  - {x: -2.3623176, y: -2.3780727}
+  - {x: 2.4035506, y: -2.382581}
 --- !u!483693784 &2119939207
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -8734,7 +8788,7 @@ PrefabInstance:
     - target: {fileID: 6857423625343760721, guid: 03dd5c0ea8836f840a86e69209f2b596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.92
+      value: 24.92
       objectReference: {fileID: 0}
     - target: {fileID: 6857423625343760721, guid: 03dd5c0ea8836f840a86e69209f2b596,
         type: 3}
@@ -8781,7 +8835,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-
     - target: {fileID: 6857423624977680081, guid: 03dd5c0ea8836f840a86e69209f2b596,
         type: 3}
       propertyPath: m_BackGroundColor.r
@@ -8796,7 +8849,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0.4745098
-
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03dd5c0ea8836f840a86e69209f2b596, type: 3}
