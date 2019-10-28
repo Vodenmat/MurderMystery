@@ -50,6 +50,12 @@ public class EnterButton : MonoBehaviour
             buttonWarningText.text = "";
             SceneManager.LoadScene("CelebRoom");
         }
+        else if (PlayerPrefs.GetInt("EnterRoom#") == 7 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)
+        {
+            PlayerPrefs.SetInt("PlayerKnowsCost", 0);
+            buttonWarningText.text = "";
+            SceneManager.LoadScene("Office");
+        }
         PlayerPrefs.SetInt("PlayerKnowsCost", 1);
         buttonWarningText.text = "Are you sure?  This will cost you an action.";
     }

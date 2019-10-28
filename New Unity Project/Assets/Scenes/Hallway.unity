@@ -1035,10 +1035,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yourDoorText: {fileID: 956275609}
-
-  Dialogue: {fileID: 0}
-  enterButton: {fileID: 0}
-
+  buttonWarningText: {fileID: 1767852290}
+  enterButtonText: {fileID: 1671297269}
+  enterButton: {fileID: 907809770}
 --- !u!1 &1671297267
 GameObject:
   m_ObjectHideFlags: 0
