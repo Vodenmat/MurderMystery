@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hallway.unity
     guid: fbea679272cbc2c46b4754596f4b0666
+  - enabled: 1
+    path: Assets/Scenes/YourRoom.unity
+    guid: 6d1242647e48ddc4db6bd84a4d2befcf
+  - enabled: 1
+    path: Assets/Scenes/OldManRoom.unity
+    guid: f0d18cbe22b424d4cb6be45329f58664
+  - enabled: 1
+    path: Assets/Scenes/StephenRoom.unity
+    guid: 213cc7379de05454399e5c63a70fb7bf
+  - enabled: 1
+    path: Assets/Scenes/NerdRoom.unity
+    guid: 193023eec227c9c4bb7c21071bc5ab87
   m_configObjects: {}

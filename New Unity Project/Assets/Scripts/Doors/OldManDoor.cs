@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class YourDoor : MonoBehaviour
+public class OldManDoor : MonoBehaviour
 {
     public Text yourDoorText;
     public Text buttonWarningText;
@@ -17,12 +17,12 @@ public class YourDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerPrefs.SetInt("EnterRoom#", 1);
-        yourDoorText.text = "Your Room";
+        PlayerPrefs.SetInt("EnterRoom#", 3);
+        yourDoorText.text = "Wilfred's Room";
         enterButton.GetComponent<Image>().enabled = true;
         enterButtonText.GetComponent<Text>().enabled = true;
     }

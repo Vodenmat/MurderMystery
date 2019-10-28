@@ -212,6 +212,7 @@ RectTransform:
   m_Children:
   - {fileID: 956275608}
   - {fileID: 907809771}
+  - {fileID: 1767852289}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -342,6 +343,7 @@ GameObject:
   - component: {fileID: 581748996}
   - component: {fileID: 581748995}
   - component: {fileID: 581748994}
+  - component: {fileID: 581748997}
   m_Layer: 0
   m_Name: CelebDoor
   m_TagString: Untagged
@@ -438,6 +440,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581748997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581748993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d87e00a5bcb78243bec22a0a8feff31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourDoorText: {fileID: 956275609}
+  buttonWarningText: {fileID: 1767852290}
+  enterButtonText: {fileID: 1671297269}
+  enterButton: {fileID: 907809770}
 --- !u!1 &907809770
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +468,7 @@ GameObject:
   - component: {fileID: 907809774}
   - component: {fileID: 907809773}
   - component: {fileID: 907809772}
+  - component: {fileID: 907809775}
   m_Layer: 5
   m_Name: Enter
   m_TagString: Untagged
@@ -474,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -0.1}
+  m_AnchoredPosition: {x: -477, y: -237}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &907809772
@@ -519,7 +538,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 907809773}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 907809775}
+        m_MethodName: EnterButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &907809773
@@ -529,7 +559,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907809770}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -560,6 +590,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907809770}
   m_CullTransparentMesh: 0
+--- !u!114 &907809775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907809770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5385abf9fd1d514e98f3d8d7163feae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonWarningText: {fileID: 1767852290}
 --- !u!1 &956275607
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +615,7 @@ GameObject:
   - component: {fileID: 956275610}
   - component: {fileID: 956275609}
   m_Layer: 5
-  m_Name: YourDoorText
+  m_Name: RoomText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,7 +637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: 131}
+  m_AnchoredPosition: {x: -490, y: 248.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956275609
@@ -757,6 +800,7 @@ GameObject:
   - component: {fileID: 975320741}
   - component: {fileID: 975320740}
   - component: {fileID: 975320739}
+  - component: {fileID: 975320742}
   m_Layer: 0
   m_Name: StephenDoor
   m_TagString: Untagged
@@ -829,7 +873,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5849056, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -853,6 +897,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &975320742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975320738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17126e1a108225846afccb4ab256306b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourDoorText: {fileID: 956275609}
+  buttonWarningText: {fileID: 1767852290}
+  enterButtonText: {fileID: 1671297269}
+  enterButton: {fileID: 907809770}
 --- !u!1 &1408057623
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +1034,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yourDoorText: {fileID: 956275609}
-  Dialogue: {fileID: 0}
+  buttonWarningText: {fileID: 1767852290}
+  enterButtonText: {fileID: 1671297269}
+  enterButton: {fileID: 907809770}
 --- !u!1 &1671297267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1081,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671297267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -1053,6 +1115,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671297267}
+  m_CullTransparentMesh: 0
+--- !u!1 &1767852288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767852289}
+  - component: {fileID: 1767852291}
+  - component: {fileID: 1767852290}
+  m_Layer: 5
+  m_Name: WarningText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1767852289
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767852288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 93219465}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -250, y: -245.18}
+  m_SizeDelta: {x: 251.7, y: 36.64}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1767852290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767852288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 72
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1767852291
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767852288}
   m_CullTransparentMesh: 0
 --- !u!1 &1868989621
 GameObject:
@@ -3710,6 +3851,7 @@ GameObject:
   - component: {fileID: 1876961469}
   - component: {fileID: 1876961468}
   - component: {fileID: 1876961467}
+  - component: {fileID: 1876961470}
   m_Layer: 0
   m_Name: OldManDoor
   m_TagString: Untagged
@@ -3806,6 +3948,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876961470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876961466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa3b7b4b1995474a8149a6a54555281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourDoorText: {fileID: 956275609}
+  buttonWarningText: {fileID: 1767852290}
+  enterButtonText: {fileID: 1671297269}
+  enterButton: {fileID: 907809770}
 --- !u!1 &1877058328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5562,6 +5720,7 @@ GameObject:
   - component: {fileID: 2073586828}
   - component: {fileID: 2073586827}
   - component: {fileID: 2073586826}
+  - component: {fileID: 2073586829}
   m_Layer: 0
   m_Name: NerdDoor
   m_TagString: Untagged
@@ -5658,6 +5817,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2073586829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073586825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83bd14fd03589d408383adfba8ee7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourDoorText: {fileID: 956275609}
+  buttonWarningText: {fileID: 1767852290}
+  enterButtonText: {fileID: 1671297269}
+  enterButton: {fileID: 907809770}
 --- !u!1001 &2110338866
 PrefabInstance:
   m_ObjectHideFlags: 0
