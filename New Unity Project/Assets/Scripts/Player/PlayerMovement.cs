@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(0, 0, 0);
         }
+        if (PlayerPrefs.GetInt("Actions") == 0)
+        {
+            PlayerPrefs.SetInt("Actions", 2);
+        }
     }
 
     // Update is called once per frame
@@ -28,8 +32,11 @@ public class PlayerMovement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        Vector2 velocity = new Vector2(x, y);
-        GetComponent<Rigidbody2D>().velocity = velocity * moveSpeed;
+        if (PlayerPrefs.GetInt("CanMove?") == 1)
+        {
+            Vector2 velocity = new Vector2(x, y);
+            GetComponent<Rigidbody2D>().velocity = velocity * moveSpeed;
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -43,13 +50,6 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 SceneManager.LoadScene("Lobby");
-            }
-        }
-        if (collision.gameObject.tag == "NerdDoor")
-        {
-            if (Input.GetKeyDown("space"))
-            {
-                SceneManager.LoadScene("NerdRoom");
             }
         }
     }
