@@ -47,7 +47,7 @@ public class Dialogue : MonoBehaviour
             dialogueText.text = "Thank you so much for coming, detective.";
         }
     }
-    void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (this.gameObject.name == "Manager")
         {

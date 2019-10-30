@@ -8,6 +8,7 @@ public class OfficeDoor : MonoBehaviour
     public Text buttonWarningText;
     public Text enterButtonText;
     public GameObject enterButton;
+    public Button talkButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class OfficeDoor : MonoBehaviour
         yourDoorText.text = "Manager's Office";
         enterButton.GetComponent<Image>().enabled = true;
         enterButtonText.GetComponent<Text>().enabled = true;
+        talkButton.GetComponent<Button>().interactable = false;
     }
     void OnCollisionExit2D(Collision2D collision)
     {
@@ -33,5 +35,6 @@ public class OfficeDoor : MonoBehaviour
         buttonWarningText.text = "";
         enterButton.GetComponent<Image>().enabled = false;
         enterButtonText.GetComponent<Text>().enabled = false;
+        talkButton.GetComponent<Button>().interactable = true;
     }
 }

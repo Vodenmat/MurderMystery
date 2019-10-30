@@ -26,10 +26,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("r"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         if (PlayerPrefs.GetInt("CanMove?") == 1)

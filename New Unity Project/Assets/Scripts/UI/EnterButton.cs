@@ -20,6 +20,7 @@ public class EnterButton : MonoBehaviour
     public void EnterButtonClick()
     {
         
+        buttonWarningText.text = "Are you sure?  This will cost you an action.";
         if (PlayerPrefs.GetInt("EnterRoom#") == 1 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
@@ -50,13 +51,17 @@ public class EnterButton : MonoBehaviour
             buttonWarningText.text = "";
             SceneManager.LoadScene("CelebRoom");
         }
-        else if (PlayerPrefs.GetInt("EnterRoom#") == 7 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)
+        else if (PlayerPrefs.GetInt("EnterRoom#") == 7 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && PlayerPrefs.GetInt("CanOffice") == 1)
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
             SceneManager.LoadScene("Office");
         }
+        else if (PlayerPrefs.GetInt("EnterRoom#") == 7 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && PlayerPrefs.GetInt("CanOffice") == 0)
+        {
+            PlayerPrefs.SetInt("PlayerKnowsCost", 0);
+            buttonWarningText.text = "Sorry, you don't have permission to investigate this room";
+        }
         PlayerPrefs.SetInt("PlayerKnowsCost", 1);
-        buttonWarningText.text = "Are you sure?  This will cost you an action.";
     }
 }
