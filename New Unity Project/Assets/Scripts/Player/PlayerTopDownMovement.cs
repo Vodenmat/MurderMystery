@@ -13,7 +13,7 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             transform.position = new Vector3(0, 23.92f, 0);
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "Lobby")
         {
             transform.position = new Vector3(0, 0, 0);
         }
@@ -26,15 +26,26 @@ public class PlayerTopDownMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        mousePosition.z = transform.position.z;
-        transform.up = mousePosition - transform.position;
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-        Vector2 moveDir = y * transform.up + x * transform.right;
-        moveDir.Normalize();
-        GetComponent<Rigidbody2D>().velocity = moveDir * moveSpeed;
+        Vector3 oldPosition;
+        if (PlayerPrefs.GetInt("CanMove?") == 1)
+        {
+            oldPosition = (transform.position);
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            mousePosition.z = transform.position.z;
+            transform.up = mousePosition - transform.position;
+            float x = Input.GetAxisRaw("Horizontal");
+            float y = Input.GetAxisRaw("Vertical");
+            Vector2 moveDir = y * transform.up + x * transform.right;
+            moveDir.Normalize();
+            GetComponent<Rigidbody2D>().velocity = moveDir * moveSpeed;
+        }
+        else
+        {
+            //transform.position = new Vector3(oldPosition.x, oldPosition.y, oldPosition.z);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            transform.up = new Vector3(0, 0, 0);
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {

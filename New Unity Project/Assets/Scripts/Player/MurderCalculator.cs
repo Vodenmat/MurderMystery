@@ -19,7 +19,11 @@ public class MurderCalculator : MonoBehaviour
              * 4 = Manager
              * 5 = Receptionist
             */
-            PlayerPrefs.SetInt("WhoKnows", rnd.Next(1, 6));
+            rndBackup = PlayerPrefs.GetInt("Murderer");
+            while (rndBackup == PlayerPrefs.GetInt("Murderer"))
+            {
+                PlayerPrefs.SetInt("WhoKnows", rnd.Next(1, 6));
+            }
             if (PlayerPrefs.GetInt("WhoKnows") == 1)
             {
                 PlayerPrefs.SetInt("NerdSuspects", PlayerPrefs.GetInt("Murderer"));
