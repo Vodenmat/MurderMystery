@@ -50,7 +50,7 @@ public class ManagerDialogue : MonoBehaviour
             dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here, but I'd watch out for Tracy.");
             dialogueList.Add("She was in his room the night of the murder, but she says she didn't see anything.");
         }
-        else if (PlayerPrefs.GetInt("ManagerSuspects") == 5)
+        else
         {
             dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here, but I'd watch out for Cheryl, my receptionist.");
             dialogueList.Add("She was Stephen's ex.  Simple as that.");
@@ -67,6 +67,7 @@ public class ManagerDialogue : MonoBehaviour
         timer = 0;
         timerGoing = true;
         dialogueList.Add("Oh, of course.");
+        dialogue.text = dialogueList[0];
     }
     public void DialogueProgression()
     {
@@ -82,7 +83,7 @@ public class ManagerDialogue : MonoBehaviour
             timer = 0;
             dialogueList.RemoveAt(0);
         }*/
-        if (dialogueList.Count == 1)
+        if (dialogueList.Count == 0)
         {
             PlayerPrefs.SetInt("CanMove?", 1);
             timerGoing = false;
@@ -94,6 +95,6 @@ public class ManagerDialogue : MonoBehaviour
             timer = 0;
             dialogueList.RemoveAt(0);
         }
-        dialogue.text = dialogueList[0].ToString();
+        dialogue.text = dialogueList[0];
     }
 }

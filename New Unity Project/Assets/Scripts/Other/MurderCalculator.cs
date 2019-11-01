@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MurderCalculator : MonoBehaviour
 {
-    System.Random rnd;
+    System.Random rnd = new System.Random();
     int rndBackup;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class MurderCalculator : MonoBehaviour
             while (rndBackup == PlayerPrefs.GetInt("Murderer"))
             {
                 PlayerPrefs.SetInt("WhoKnows", rnd.Next(1, 6));
+                rndBackup = PlayerPrefs.GetInt("WhoKnows");
             }
             if (PlayerPrefs.GetInt("WhoKnows") == 1)
             {
