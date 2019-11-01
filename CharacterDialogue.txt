@@ -26,7 +26,7 @@ Can I investigate your room? - Okay, but you better not be looking for any souve
 
 
 
-Receptionist
+Receptionist (Cheryl)
 
 Do you have any suspects?  - Oh, definitely not (Old Man Wilfred, Gregory, Tracy Porter),
 	(he gives everyone disapproving looks, except Stephen.  Wilfred always treated Stephen like a grandson.)    
@@ -36,7 +36,7 @@ Where were you the night of the murder? - I wasn't even around that night.  I wa
 
 
 
-Manager
+Manager (Kevin)
 
 When you first walk in - Thank you so much for coming detective! The hotel hasn't been the same since the murder.  Stephen was such a fine young man too...
 Can I have a peek in your office? - Yes, of course

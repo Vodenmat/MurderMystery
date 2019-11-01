@@ -15,7 +15,10 @@ public class AnimatorVariables : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        GetComponent<Animator>().SetFloat("x", x);
-        GetComponent<Animator>().SetFloat("y", y);
+        if (PlayerPrefs.GetInt("CanMove?") == 1)
+        {
+            GetComponent<Animator>().SetFloat("x", x);
+            GetComponent<Animator>().SetFloat("y", y);
+        }
     }
 }

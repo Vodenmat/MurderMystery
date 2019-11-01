@@ -79,7 +79,7 @@ public class MurderCalculator : MonoBehaviour
             }
             if (PlayerPrefs.GetInt("WhoKnows") == 5)
             {
-                PlayerPrefs.SetInt("ReceptionistSuspects", PlayerPrefs.GetInt("Murderer"));
+                PlayerPrefs.SetInt("RecepSuspects", PlayerPrefs.GetInt("Murderer"));
             }
             else
             {
@@ -88,7 +88,7 @@ public class MurderCalculator : MonoBehaviour
                 {
                     rndBackup = rnd.Next(1, 6);
                 }
-                PlayerPrefs.SetInt("ReceptionistSuspects", rndBackup);
+                PlayerPrefs.SetInt("RecepSuspects", rndBackup);
             }
             PlayerPrefs.SetInt("Calculated", 1);
         }        

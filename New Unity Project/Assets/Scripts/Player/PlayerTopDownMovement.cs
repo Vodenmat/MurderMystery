@@ -61,6 +61,14 @@ public class PlayerTopDownMovement : MonoBehaviour
                 SceneManager.LoadScene("Lobby");
             }
         }
+        if (collision.gameObject.name == "Manager")
+        {
+            PlayerPrefs.SetString("SpeakingTo", "Manager");
+        }
+        else if (collision.gameObject.name == "Receptionist")
+        {
+            PlayerPrefs.SetString("SpeakingTo", "Receptionist");
+        }
     }
     void OnCollisionStay2D(Collision2D collision)
     {
