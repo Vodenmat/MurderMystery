@@ -12,13 +12,9 @@ public class ManagerDialogue : MonoBehaviour
     List<string> dialogueList = new List<string>();
     void Update()
     {
-        if (timerGoing)
+        if (timerGoing && Input.GetMouseButtonDown(0))
         {
-            timer += Time.deltaTime;
-            if (timer > 3)
-            {
-                DialogueProgression();
-            }
+            DialogueProgression();
         }
     }
     public void Cancel()
