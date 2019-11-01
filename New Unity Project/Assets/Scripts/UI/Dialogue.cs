@@ -21,6 +21,10 @@ public class Dialogue : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Intro?") == 0)
         {
+            if (dialogueText.text == "")
+            {
+                dialogueText.text = "Thank you so much for coming detective.";
+            }
             OpeningText();
             timer += Time.deltaTime;
         }
@@ -29,36 +33,35 @@ public class Dialogue : MonoBehaviour
     public void OpeningText()
     {
         PlayerPrefs.SetInt("CanMove?", 0);
-        if (this.gameObject.name == "Manager" && timer > 9)
+        if (this.gameObject.name == "ManagerAura" && Input.GetMouseButtonDown(0))
         {
-            dialogueText.text = "";
-            PlayerPrefs.SetInt("CanMove?", 1);
-            PlayerPrefs.SetInt("Intro?", 1);
-        }
-        else if (this.gameObject.name == "Manager" && timer > 6)
-        {
-            dialogueText.text = "Stephen was such a fine young man too...";
-        }
-        else if (this.gameObject.name == "Manager" && timer > 3)
-        {
-            dialogueText.text = "The hotel hasn't been the same since the murder.";
-        }
-        else if (this.gameObject.name == "Manager")
-        {
-            dialogueText.text = "Thank you so much for coming, detective.";
+            if (dialogueText.text == "Thank you so much for coming detective.")
+            {
+                dialogueText.text = "The hotel hasn't been the same since the murder.";
+            }
+            else if (dialogueText.text == "The hotel hasn't been the same since the murder.")
+            {
+                dialogueText.text = "Stephen was such a fine young man too...";
+            }
+            else if (dialogueText.text == "Stephen was such a fine young man too...")
+            {
+                dialogueText.text = "";
+                PlayerPrefs.SetInt("CanMove?", 1);
+                PlayerPrefs.SetInt("Intro?", 1);
+            }
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (this.gameObject.name == "Manager" || this.gameObject.name == "Receptionist")
+        if (PlayerPrefs.GetInt("CanMove?") == 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura"))
         {
             speakButton.GetComponent<Image>().enabled = true;
             speakButtonText.text = "Talk?";
         }
     }
-    void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
-        if (this.gameObject.name == "Manager" || this.gameObject.name == "Receptionist")
+        if (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura")
         {
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";

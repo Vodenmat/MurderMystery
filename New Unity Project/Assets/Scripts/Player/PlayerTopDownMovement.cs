@@ -61,14 +61,6 @@ public class PlayerTopDownMovement : MonoBehaviour
                 SceneManager.LoadScene("Lobby");
             }
         }
-        if (collision.gameObject.name == "Manager")
-        {
-            PlayerPrefs.SetString("SpeakingTo", "Manager");
-        }
-        else if (collision.gameObject.name == "Receptionist")
-        {
-            PlayerPrefs.SetString("SpeakingTo", "Receptionist");
-        }
     }
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -79,6 +71,13 @@ public class PlayerTopDownMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.name == "ManagerAura")
+        {
+            PlayerPrefs.SetString("SpeakingTo", "Manager");
+        }
+        else if (collision.gameObject.name == "ReceptionistAura")
+        {
+            PlayerPrefs.SetString("SpeakingTo", "Receptionist");
+        }
     }
 }
