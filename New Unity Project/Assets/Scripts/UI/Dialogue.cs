@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     public GameObject speakButton;
     public Text speakButtonText;
     public Canvas managerCanvas;
+    public Canvas recepCanvas;
     float timer = 0;
     // Start is called before the first frame update
     void Start()
@@ -49,7 +50,7 @@ public class Dialogue : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (this.gameObject.name == "Manager")
+        if (this.gameObject.name == "Manager" || this.gameObject.name == "Receptionist")
         {
             speakButton.GetComponent<Image>().enabled = true;
             speakButtonText.text = "Talk?";
@@ -57,7 +58,7 @@ public class Dialogue : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (this.gameObject.name == "Manager")
+        if (this.gameObject.name == "Manager" || this.gameObject.name == "Receptionist")
         {
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";
@@ -65,12 +66,19 @@ public class Dialogue : MonoBehaviour
     }
     public void Speaking()
     {
-        if (this.gameObject.name == "Manager")
+        if (PlayerPrefs.GetString("SpeakingTo") == "Manager")
         {
             PlayerPrefs.SetInt("CanMove?", 0);
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";
             managerCanvas.GetComponent<Canvas>().enabled = true;
+        }
+        else if (PlayerPrefs.GetString("SpeakingTo") == "Receptionist")
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            speakButton.GetComponent<Image>().enabled = false;
+            speakButtonText.text = "";
+            recepCanvas.GetComponent<Canvas>().enabled = true;
         }
     }
 }

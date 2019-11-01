@@ -30,6 +30,10 @@ public class ManagerDialogue : MonoBehaviour
     {
         GetComponent<Canvas>().enabled = false;
         dialogueCanvas.GetComponent<Canvas>().enabled = true;
+        dialogueList.Add("In my office, filing some paperwork for our hotel taxes");
+        dialogue.text = dialogueList[0];
+        timer = 0;
+        timerGoing = true;
     }
     public void Suspects()
     {
@@ -63,26 +67,21 @@ public class ManagerDialogue : MonoBehaviour
     {
         GetComponent<Canvas>().enabled = false;
         dialogueCanvas.GetComponent<Canvas>().enabled = true;
-        PlayerPrefs.SetInt("CanOffice", 1);
         timer = 0;
         timerGoing = true;
-        dialogueList.Add("Oh, of course.");
+        if (PlayerPrefs.GetInt("CanOffice") == 1)
+        {
+            dialogueList.Add("But, you-");
+        }
+        else
+        {
+            dialogueList.Add("Oh, of course.");
+        }
+        PlayerPrefs.SetInt("CanOffice", 1);
         dialogue.text = dialogueList[0];
     }
     public void DialogueProgression()
     {
-        /*if (timer > 3 && dialogueList.Count == 1)
-        {
-            PlayerPrefs.SetInt("CanMove?", 1);
-            timerGoing = false;
-            timer = 0;
-            dialogue.text = "";
-        }
-        else if (timer > 3)
-        {
-            timer = 0;
-            dialogueList.RemoveAt(0);
-        }*/
         if (dialogueList.Count == 0)
         {
             PlayerPrefs.SetInt("CanMove?", 1);
