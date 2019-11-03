@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour
     public Text speakButtonText;
     public Canvas managerCanvas;
     public Canvas recepCanvas;
+    public Canvas celebCanvas;
     float timer = 0;
     // Start is called before the first frame update
     void Start()
@@ -53,7 +54,7 @@ public class Dialogue : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt("CanMove?") == 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura"))
+        if (PlayerPrefs.GetInt("CanMove?") == 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura"))
         {
             speakButton.GetComponent<Image>().enabled = true;
             speakButtonText.text = "Talk?";
@@ -61,7 +62,7 @@ public class Dialogue : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura")
+        if (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura")
         {
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";
@@ -82,6 +83,13 @@ public class Dialogue : MonoBehaviour
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";
             recepCanvas.GetComponent<Canvas>().enabled = true;
+        }
+        else if (PlayerPrefs.GetString("SpeakingTo") == "Celebrity")
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            speakButton.GetComponent<Image>().enabled = false;
+            speakButtonText.text = "";
+            celebCanvas.GetComponent<Canvas>().enabled = true;
         }
     }
 }

@@ -78,12 +78,13 @@ public class ManagerDialogue : MonoBehaviour
     }
     public void DialogueProgression()
     {
-        if (dialogueList.Count == 0)
+        if (dialogueList.Count == 1)
         {
             PlayerPrefs.SetInt("CanMove?", 1);
             timerGoing = false;
             timer = 0;
             dialogue.text = "";
+            dialogueList.RemoveAt(0);
         }
         else
         {
