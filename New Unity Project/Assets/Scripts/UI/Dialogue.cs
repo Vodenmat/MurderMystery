@@ -10,6 +10,8 @@ public class Dialogue : MonoBehaviour
     public Canvas managerCanvas;
     public Canvas recepCanvas;
     public Canvas celebCanvas;
+    public Canvas nerdCanvas;
+    public Canvas oldManCanvas;
     float timer = 0;
     // Start is called before the first frame update
     void Start()
@@ -54,7 +56,7 @@ public class Dialogue : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt("CanMove?") == 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura"))
+        if (PlayerPrefs.GetInt("CanMove?") == 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura" || this.gameObject.name == "NerdAura" || this.gameObject.name == "OldManAura"))
         {
             speakButton.GetComponent<Image>().enabled = true;
             speakButtonText.text = "Talk?";
@@ -62,7 +64,7 @@ public class Dialogue : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura")
+        if (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura" || this.gameObject.name == "NerdAura" || this.gameObject.name == "OldManAura")
         {
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";
@@ -90,6 +92,20 @@ public class Dialogue : MonoBehaviour
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";
             celebCanvas.GetComponent<Canvas>().enabled = true;
+        }
+        else if (PlayerPrefs.GetString("SpeakingTo") == "Nerd")
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            speakButton.GetComponent<Image>().enabled = false;
+            speakButtonText.text = "";
+            nerdCanvas.GetComponent<Canvas>().enabled = true;
+        }
+        else if (PlayerPrefs.GetString("SpeakingTo") == "OldMan")
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            speakButton.GetComponent<Image>().enabled = false;
+            speakButtonText.text = "";
+            oldManCanvas.GetComponent<Canvas>().enabled = true;
         }
     }
 }
