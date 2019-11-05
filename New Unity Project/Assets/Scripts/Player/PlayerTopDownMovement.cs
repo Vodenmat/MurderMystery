@@ -45,6 +45,10 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             PlayerPrefs.SetInt("Actions", 2);
         }
+        if (PlayerPrefs.GetInt("Alive?") == 0)
+        {
+            PlayerPrefs.SetInt("Alive?", 2); //2 = alive, 1 = dead
+        }
     }
 
     // Update is called once per frame
@@ -107,6 +111,14 @@ public class PlayerTopDownMovement : MonoBehaviour
         else if (collision.gameObject.name == "CelebrityAura")
         {
             PlayerPrefs.SetString("SpeakingTo", "Celebrity");
+        }
+        else if (collision.gameObject.name == "NerdAura")
+        {
+            PlayerPrefs.SetString("SpeakingTo", "Nerd");
+        }
+        else if (collision.gameObject.name == "OldManAura")
+        {
+            PlayerPrefs.SetString("SpeakingTo", "OldMan");
         }
     }
 }
