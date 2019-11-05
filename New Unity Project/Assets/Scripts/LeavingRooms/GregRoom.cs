@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class oldmanroom : MonoBehaviour
+public class gregroom : MonoBehaviour
 {
     public int scoreCount = 0;
 
@@ -20,7 +20,7 @@ public class oldmanroom : MonoBehaviour
         }
         else if (collision.gameObject.tag == "minus")
         {
-
+            
         }
 
     }

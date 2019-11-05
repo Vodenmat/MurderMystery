@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class gregroom : MonoBehaviour
+public class oldmanroom : MonoBehaviour
 {
     public int scoreCount = 0;
 
@@ -12,15 +12,15 @@ public class gregroom : MonoBehaviour
         if (collision.gameObject.tag == "plus")
         {
             scoreCount++;
-            if (scoreCount >= 1)
+            if (scoreCount == 1)
             {
-                SceneManager.LoadScene("Scene2");
+                SceneManager.LoadScene("Hallway");
 
             }
         }
         else if (collision.gameObject.tag == "minus")
         {
-
+            
         }
 
     }
