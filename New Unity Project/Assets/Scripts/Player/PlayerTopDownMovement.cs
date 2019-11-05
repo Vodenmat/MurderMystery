@@ -108,13 +108,5 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             PlayerPrefs.SetString("SpeakingTo", "Celebrity");
         }
-        else if (collision.gameObject.name == "NerdAura")
-        {
-            PlayerPrefs.SetString("SpeakingTo", "Nerd");
-        }
-        else if (collision.gameObject.name == "OldManAura")
-        {
-            PlayerPrefs.SetString("SpeakingTo", "OldMan");
-        }
     }
 }
