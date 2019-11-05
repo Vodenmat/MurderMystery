@@ -2839,23 +2839,6 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1372012704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73d0863f48a3626498b033b7d6da9a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 235487330}
-  speakButton: {fileID: 1057216157}
-  speakButtonText: {fileID: 242448830}
-  managerCanvas: {fileID: 1743307624}
-  recepCanvas: {fileID: 1875633827}
-  celebCanvas: {fileID: 1783906963}
-  nerdCanvas: {fileID: 0}
-  oldManCanvas: {fileID: 0}
---- !u!1 &1388645830
-=======
   m_GameObject: {fileID: 1145722949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2875,7 +2858,6 @@ MonoBehaviour:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1156909940
->>>>>>> 8d37d27c65e169c36ca5b722a826286a027bc45d
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3173,8 +3155,6 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< HEAD
-=======
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 32767
@@ -3430,7 +3410,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
->>>>>>> 8d37d27c65e169c36ca5b722a826286a027bc45d
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 32767
@@ -3457,11 +3436,6 @@ Transform:
   m_LocalScale: {x: 5, y: 2.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &1669726580
-=======
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3470,7 +3444,6 @@ Transform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1743307626
->>>>>>> 8d37d27c65e169c36ca5b722a826286a027bc45d
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7327,11 +7300,7 @@ PrefabInstance:
     - target: {fileID: 1301259272171042563, guid: 40931966baca7ea49839a0fb7d87bb63,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 1
-=======
       value: 2
->>>>>>> 8d37d27c65e169c36ca5b722a826286a027bc45d
       objectReference: {fileID: 0}
     - target: {fileID: 1301259272171042563, guid: 40931966baca7ea49839a0fb7d87bb63,
         type: 3}
@@ -7350,8 +7319,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40931966baca7ea49839a0fb7d87bb63, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &2108560641
 GameObject:
   m_ObjectHideFlags: 0
@@ -7485,7 +7452,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108560641}
   m_CullTransparentMesh: 0
->>>>>>> 8d37d27c65e169c36ca5b722a826286a027bc45d
 --- !u!1 &2119939202
 GameObject:
   m_ObjectHideFlags: 0
