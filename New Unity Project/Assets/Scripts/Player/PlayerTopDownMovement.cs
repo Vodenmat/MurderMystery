@@ -9,6 +9,30 @@ public class PlayerTopDownMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "NerdRoom")
+        {
+            transform.position = new Vector3(-1, 11, 0);
+        }
+        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "YourRoom")
+        {
+            transform.position = new Vector3(-1, 33, 0);
+        }
+        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "OldManRoom")
+        {
+            transform.position = new Vector3(-1, 22, 0);
+        }
+        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "CelebRoom")
+        {
+            transform.position = new Vector3(1, 11, 0);
+        }
+        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "StephenRoom")
+        {
+            transform.position = new Vector3(1, 22, 0);
+        }
+        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "Hallway")
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
         if (SceneManager.GetActiveScene().name == "Lobby" && PlayerPrefs.GetInt("StairsTouched") == 1)
         {
             transform.position = new Vector3(0, 23.92f, 0);
@@ -51,6 +75,7 @@ public class PlayerTopDownMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Stairs")
         {
+            PlayerPrefs.SetString("CurrentRoom", "Hallway");
             PlayerPrefs.SetInt("StairsTouched", 1);
             if (SceneManager.GetActiveScene().name == "Lobby")
             {
