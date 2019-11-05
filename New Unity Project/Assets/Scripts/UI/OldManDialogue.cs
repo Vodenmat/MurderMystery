@@ -41,8 +41,9 @@ public class OldManDialogue : MonoBehaviour
         dialogueList.Add("...");
         dialogue.text = dialogueList[0];
     }
-    public void Suspects()
+    public void Suspects() //Takes an action
     {
+        PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
         GetComponent<Canvas>().enabled = false;
         dialogueCanvas.GetComponent<Canvas>().enabled = true;
         if (PlayerPrefs.GetInt("OldManSuspects") == 2)

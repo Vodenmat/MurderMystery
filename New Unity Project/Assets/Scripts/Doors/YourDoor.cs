@@ -19,14 +19,14 @@ public class YourDoor : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerPrefs.SetInt("EnterRoom#", 1);
         yourDoorText.text = "Your Room";
         enterButton.GetComponent<Image>().enabled = true;
         enterButtonText.GetComponent<Text>().enabled = true;
     }
-    void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         PlayerPrefs.SetInt("PlayerKnowsCost", 0);
         yourDoorText.text = "";

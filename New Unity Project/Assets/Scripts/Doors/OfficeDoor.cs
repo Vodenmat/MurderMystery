@@ -20,7 +20,7 @@ public class OfficeDoor : MonoBehaviour
     {
 
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerPrefs.SetInt("EnterRoom#", 7);
         yourDoorText.text = "Manager's Office";
@@ -28,7 +28,7 @@ public class OfficeDoor : MonoBehaviour
         enterButtonText.GetComponent<Text>().enabled = true;
         talkButton.GetComponent<Button>().interactable = false;
     }
-    void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         PlayerPrefs.SetInt("PlayerKnowsCost", 0);
         yourDoorText.text = "";

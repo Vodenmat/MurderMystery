@@ -32,10 +32,11 @@ public class RecepDialogue : MonoBehaviour
         timer = 0;
         timerGoing = true;
     }
-    public void Suspects()
+    public void Suspects() //Takes an action
     {
         GetComponent<Canvas>().enabled = false;
         dialogueCanvas.GetComponent<Canvas>().enabled = true;
+        PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
         rndSuspect = PlayerPrefs.GetInt("RecepSuspects");
         while (rndSuspect == PlayerPrefs.GetInt("RecepSuspects"))
         {

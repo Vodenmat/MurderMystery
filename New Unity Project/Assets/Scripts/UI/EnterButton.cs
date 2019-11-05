@@ -25,30 +25,35 @@ public class EnterButton : MonoBehaviour
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
+            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
             SceneManager.LoadScene("YourRoom");
         }
         else if (PlayerPrefs.GetInt("EnterRoom#") == 3 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
+            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
             SceneManager.LoadScene("OldManRoom");
         }
         else if (PlayerPrefs.GetInt("EnterRoom#") == 2 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
+            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
             SceneManager.LoadScene("StephenRoom");
         }
         else if (PlayerPrefs.GetInt("EnterRoom#") == 5 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
+            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
             SceneManager.LoadScene("NerdRoom");
         }
         else if (PlayerPrefs.GetInt("EnterRoom#") == 6 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && PlayerPrefs.GetInt("CanCelebRoom") == 1)
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
+            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
             SceneManager.LoadScene("CelebRoom");
         }
         else if (PlayerPrefs.GetInt("EnterRoom#") == 6 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && PlayerPrefs.GetInt("CanCelebRoom") == 0)
@@ -60,6 +65,7 @@ public class EnterButton : MonoBehaviour
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
+            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
             SceneManager.LoadScene("Office");
         }
         else if (PlayerPrefs.GetInt("EnterRoom#") == 7 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && PlayerPrefs.GetInt("CanOffice") == 0)

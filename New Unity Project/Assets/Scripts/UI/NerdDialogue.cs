@@ -32,8 +32,9 @@ public class NerdDialogue : MonoBehaviour
         timer = 0;
         timerGoing = true;
     }
-    public void Suspects()
+    public void Suspects() //Takes an action
     {
+        PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
         GetComponent<Canvas>().enabled = false;
         dialogueCanvas.GetComponent<Canvas>().enabled = true;
         dialogueList.Add("Well, uh... not really.");
