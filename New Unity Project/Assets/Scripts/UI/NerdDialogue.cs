@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class NerdDialogue : MonoBehaviour
 {
     public GameObject dialogueCanvas;
+    public GameObject prefab;
     public Text dialogue;
     bool timerGoing = false;
     float timer = 0;
@@ -16,6 +17,14 @@ public class NerdDialogue : MonoBehaviour
         if (timerGoing && Input.GetMouseButtonDown(0))
         {
             DialogueProgression();
+        }
+        if (PlayerPrefs.GetInt("Actions") == 1 && timerGoing == false)
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            dialogueCanvas.GetComponent<Canvas>().enabled = true;
+            dialogue.text = "Well, it's gotten late.";
+            GameObject fade = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+            timerGoing = true;
         }
     }
     public void Cancel()

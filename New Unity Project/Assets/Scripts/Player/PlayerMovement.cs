@@ -19,7 +19,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Actions") == 0)
         {
-            PlayerPrefs.SetInt("Actions", 4);
+            PlayerPrefs.SetInt("Actions", 5);
+        }
+        else if (PlayerPrefs.GetInt("Actions") == 1)
+        {
+            
         }
     }
 

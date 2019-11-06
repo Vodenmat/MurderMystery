@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class PlayerTopDownMovement : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
+    public GameObject prefab;
+    public Canvas canvas;
+    public Text dialogue;
     // Start is called before the first frame update
     void Start()
     {
+      //  if (SceneManager.GetActiveScene().name == "YourRoom" && )
         if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "NerdRoom")
         {
             transform.position = new Vector3(-1, 11, 0);
@@ -43,7 +47,14 @@ public class PlayerTopDownMovement : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Actions") == 0)
         {
-            PlayerPrefs.SetInt("Actions", 2);
+            PlayerPrefs.SetInt("Actions", 5);
+        }
+        if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            canvas.GetComponent<Canvas>().enabled = true;
+            dialogue.text = "Well, it's gotten late.";
+            GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
         }
         if (PlayerPrefs.GetInt("Alive?") == 0)
         {

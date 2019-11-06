@@ -19,13 +19,14 @@ public class EnterButton : MonoBehaviour
     }
     public void EnterButtonClick()
     {
-        
-        buttonWarningText.text = "Are you sure?  This will cost you an action.";
-        if (PlayerPrefs.GetInt("EnterRoom#") == 1 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)
+        if (PlayerPrefs.GetInt("EnterRoom#") != 1)
+        {
+            buttonWarningText.text = "Are you sure?  This will cost you an action.";
+        }
+        if (PlayerPrefs.GetInt("EnterRoom#") == 1)
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
-            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
             SceneManager.LoadScene("YourRoom");
         }
         else if (PlayerPrefs.GetInt("EnterRoom#") == 3 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)

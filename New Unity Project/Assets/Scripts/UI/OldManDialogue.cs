@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class OldManDialogue : MonoBehaviour
 {
+    public GameObject prefab;
     public GameObject dialogueCanvas;
     public Text dialogue;
     bool timerGoing = false;
@@ -16,6 +17,14 @@ public class OldManDialogue : MonoBehaviour
         if (timerGoing && Input.GetMouseButtonDown(0))
         {
             DialogueProgression();
+        }
+        if (PlayerPrefs.GetInt("Actions") == 1 && timerGoing == false)
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            dialogueCanvas.GetComponent<Canvas>().enabled = true;
+            dialogue.text = "Well, it's gotten late.";
+            GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
+            timerGoing = true;
         }
     }
     public void Cancel()

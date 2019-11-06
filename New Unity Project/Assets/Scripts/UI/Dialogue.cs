@@ -56,7 +56,7 @@ public class Dialogue : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt("CanMove?") == 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura" || this.gameObject.name == "NerdAura" || this.gameObject.name == "OldManAura"))
+        if (PlayerPrefs.GetInt("CanMove?") == 1 && PlayerPrefs.GetInt("Alive?") == 2 && PlayerPrefs.GetInt("Actions") != 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura" || this.gameObject.name == "NerdAura" || this.gameObject.name == "OldManAura"))
         {
             speakButton.GetComponent<Image>().enabled = true;
             speakButtonText.text = "Talk?";

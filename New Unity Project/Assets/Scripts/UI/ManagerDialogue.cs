@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ManagerDialogue : MonoBehaviour
 {
     public GameObject dialogueCanvas;
+    public GameObject prefab;
     public Text dialogue;
     bool timerGoing = false;
     float timer = 0;
@@ -15,6 +16,14 @@ public class ManagerDialogue : MonoBehaviour
         if (timerGoing && Input.GetMouseButtonDown(0))
         {
             DialogueProgression();
+        }
+        if (PlayerPrefs.GetInt("Actions") == 1 && timerGoing == false && PlayerPrefs.GetString("SpeakingTo") == "Manager")
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            dialogueCanvas.GetComponent<Canvas>().enabled = true;
+            dialogue.text = "Well, it's gotten late.";
+            GameObject fade = Instantiate(prefab, new Vector3(0,0,0), Quaternion.identity);
+            timerGoing = true;
         }
     }
     public void Cancel()
@@ -33,6 +42,7 @@ public class ManagerDialogue : MonoBehaviour
     }
     public void Suspects() //Takes an action
     {
+        timerGoing = true;
         PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
         GetComponent<Canvas>().enabled = false;
         dialogueCanvas.GetComponent<Canvas>().enabled = true;
@@ -58,7 +68,6 @@ public class ManagerDialogue : MonoBehaviour
         }
         dialogue.text = dialogueList[0];
         timer = 0;
-        timerGoing = true;
     }
     public void OfficeAsk()
     {

@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  prefab: {fileID: 3051323760023538570, guid: 8e95ceab424dbbe4ca5472b65e0a4af8, type: 3}
 --- !u!114 &4053372878438224936
 MonoBehaviour:
   m_ObjectHideFlags: 0

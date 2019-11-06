@@ -4631,6 +4631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1145722949}
+  prefab: {fileID: 3051323760023538570, guid: 8e95ceab424dbbe4ca5472b65e0a4af8, type: 3}
   dialogue: {fileID: 235487330}
 --- !u!1 &1759407892
 GameObject:
@@ -4744,6 +4745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1145722949}
+  prefab: {fileID: 3051323760023538570, guid: 8e95ceab424dbbe4ca5472b65e0a4af8, type: 3}
   dialogue: {fileID: 235487330}
 --- !u!114 &1783906961
 MonoBehaviour:
@@ -5006,6 +5008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1145722949}
+  prefab: {fileID: 3051323760023538570, guid: 8e95ceab424dbbe4ca5472b65e0a4af8, type: 3}
   dialogue: {fileID: 235487330}
 --- !u!114 &1875633825
 MonoBehaviour:
@@ -11242,7 +11245,7 @@ PrefabInstance:
     - target: {fileID: 4053372878438224937, guid: a05dbf19089fb2049a194deabb1f796e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4053372878438224937, guid: a05dbf19089fb2049a194deabb1f796e,
         type: 3}
@@ -11289,6 +11292,27 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4053372878438224939, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 3051323760023538570, guid: 8e95ceab424dbbe4ca5472b65e0a4af8,
+        type: 3}
+    - target: {fileID: 4053372878438224939, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1145722952}
+    - target: {fileID: 4053372878438224939, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 235487330}
+    - target: {fileID: 4053372878438224939, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 235487330}
     - target: {fileID: 4053372878438224942, guid: a05dbf19089fb2049a194deabb1f796e,
         type: 3}
       propertyPath: m_SortingOrder
