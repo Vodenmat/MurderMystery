@@ -23,7 +23,7 @@ public class PlayerTopDownMovement : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "OldManRoom")
         {
-            transform.position = new Vector3(-1, 22, 0);
+            transform.position = new Vector3(1, 22, 0);
         }
         if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "CelebRoom")
         {
@@ -31,7 +31,7 @@ public class PlayerTopDownMovement : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "StephenRoom")
         {
-            transform.position = new Vector3(1, 22, 0);
+            transform.position = new Vector3(-1, 22, 0);
         }
         if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "Hallway")
         {
@@ -45,6 +45,11 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             transform.position = new Vector3(0, 0, 0);
         }
+        if (SceneManager.GetActiveScene().name == "Lobby" && PlayerPrefs.GetString("CurrentRoom") == "Office")
+        {
+            transform.position = new Vector3(-5, 11, 0);
+        }
+
         if (PlayerPrefs.GetInt("Actions") == 0)
         {
             PlayerPrefs.SetInt("Actions", 5);
