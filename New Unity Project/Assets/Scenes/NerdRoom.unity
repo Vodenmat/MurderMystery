@@ -1037,6 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 939327750}
+  prefab: {fileID: 3051323760023538570, guid: 8e95ceab424dbbe4ca5472b65e0a4af8, type: 3}
   dialogue: {fileID: 1778549346}
 --- !u!223 &1212024786 stripped
 Canvas:

@@ -23,7 +23,7 @@ public class RecepDialogue : MonoBehaviour
             PlayerPrefs.SetInt("CanMove?", 0);
             dialogueCanvas.GetComponent<Canvas>().enabled = true;
             dialogue.text = "Well, it's gotten late.";
-            GameObject fade = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+            GameObject fade = Instantiate(prefab, new Vector3(-3.91f, 8.4f, 0), Quaternion.identity);
             timerGoing = true;
         }
     }

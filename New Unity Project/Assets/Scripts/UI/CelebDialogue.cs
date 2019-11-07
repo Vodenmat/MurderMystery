@@ -23,7 +23,7 @@ public class CelebDialogue : MonoBehaviour
             PlayerPrefs.SetInt("CanMove?", 0);
             dialogueCanvas.GetComponent<Canvas>().enabled = true;
             dialogue.text = "Well, it's gotten late.";
-            GameObject fade = Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            GameObject fade = Instantiate(prefab, new Vector3(11.58f, 17.63f, 0), Quaternion.identity);
             timerGoing = true;
         }
     }

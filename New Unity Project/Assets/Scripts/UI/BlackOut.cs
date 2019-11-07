@@ -28,13 +28,16 @@ public class BlackOut : MonoBehaviour
             GetComponent<SpriteRenderer>().color = blackColor;
             if (blackColor.a > .99)
             {
-                PlayerPrefs.SetInt("Actions", 5);
                 SceneManager.LoadScene("YourRoom");
             }
         }
         else
         {
             blackColor.a = blackColor.a - Time.deltaTime / 3;
+            if (blackColor.a < .75f)
+            {
+                blackColor.a = .75f;
+            }
             GetComponent<SpriteRenderer>().color = blackColor;
         }
     }

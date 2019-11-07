@@ -17,27 +17,27 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             transform.position = new Vector3(-1, 11, 0);
         }
-        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "YourRoom")
+        else if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "YourRoom")
         {
             transform.position = new Vector3(-1, 33, 0);
         }
-        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "OldManRoom")
+        else if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "OldManRoom")
         {
             transform.position = new Vector3(1, 22, 0);
         }
-        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "CelebRoom")
+        else if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "CelebRoom")
         {
             transform.position = new Vector3(1, 11, 0);
         }
-        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "StephenRoom")
+        else if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "StephenRoom")
         {
             transform.position = new Vector3(-1, 22, 0);
         }
-        if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "Hallway")
+        else if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "Hallway")
         {
             transform.position = new Vector3(0, 0, 0);
         }
-        if (SceneManager.GetActiveScene().name == "Lobby" && PlayerPrefs.GetInt("StairsTouched") == 1)
+        else if (SceneManager.GetActiveScene().name == "Lobby" && PlayerPrefs.GetInt("StairsTouched") == 1)
         {
             transform.position = new Vector3(0, 23.92f, 0);
         }
@@ -49,7 +49,17 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             transform.position = new Vector3(-5, 11, 0);
         }
-
+        if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Actions") == 1)
+        {
+            PlayerPrefs.SetInt("Alive?", 1);
+            PlayerPrefs.SetInt("Actions", 5);
+            GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
+            /*transform.position = new Vector3(7.46f, -2.41f, 0);
+            transform.up = new Vector3(0,0,0);
+            transform.up = transform.up * -1;*/
+            transform.position = new Vector3(2.96f, -2.76f, 0);
+            transform.up = new Vector3(-90, 0, 0);
+        }
         if (PlayerPrefs.GetInt("Actions") == 0)
         {
             PlayerPrefs.SetInt("Actions", 5);
@@ -88,7 +98,6 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             //transform.position = new Vector3(oldPosition.x, oldPosition.y, oldPosition.z);
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            transform.up = new Vector3(0, 0, 0);
         }
     }
     void OnCollisionEnter2D(Collision2D collision)

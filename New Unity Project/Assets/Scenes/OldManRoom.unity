@@ -560,6 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7335227a32341ab46905e43fb10055a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 3051323760023538570, guid: 8e95ceab424dbbe4ca5472b65e0a4af8, type: 3}
   dialogueCanvas: {fileID: 1907560793}
   dialogue: {fileID: 1907560796}
 --- !u!1 &674972627
