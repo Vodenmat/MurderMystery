@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Office.unity
     guid: 9154ecf0d9260c94f855cdeb81696b8d
+  - enabled: 1
+    path: Assets/Sprites/Other/Le Monke.unity
+    guid: 83aa95cca7b286d41869d40caa121340
   m_configObjects: {}
