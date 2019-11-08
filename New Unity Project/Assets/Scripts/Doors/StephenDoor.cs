@@ -12,6 +12,10 @@ public class StephenDoor : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("PlayerKnowsCost", 0);
+        if (PlayerPrefs.GetInt("Alive?") == 1)
+        {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+        }
     }
 
     // Update is called once per frame

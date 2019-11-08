@@ -7,12 +7,16 @@ public class PlayerTopDownMovement : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
     public GameObject prefab;
+    public RuntimeAnimatorController ghost;
     public Canvas canvas;
     public Text dialogue;
     // Start is called before the first frame update
     void Start()
     {
-      //  if (SceneManager.GetActiveScene().name == "YourRoom" && )
+        if (PlayerPrefs.GetInt("Alive?") == 1)
+        {
+            GetComponent<Animator>().runtimeAnimatorController = ghost;
+        }
         if (SceneManager.GetActiveScene().name == "Hallway" && PlayerPrefs.GetString("CurrentRoom") == "NerdRoom")
         {
             transform.position = new Vector3(-1, 11, 0);
@@ -49,7 +53,17 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             transform.position = new Vector3(-5, 11, 0);
         }
-        if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Actions") == 1)
+        if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("Entered?") == 0)
+        {
+            PlayerPrefs.SetInt("Entered?", 1);
+            PlayerPrefs.SetInt("CanMove?", 1);
+            canvas.GetComponent<Canvas>().enabled = true;
+            dialogue.text = "What the... I feel lighter.";
+            gameObject.layer = 8;
+            transform.position = new Vector3(2.96f, -2.76f, 0);
+            transform.up = new Vector3(-90, 0, 0);
+        }
+        else if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Actions") == 1)
         {
             PlayerPrefs.SetInt("Alive?", 1);
             PlayerPrefs.SetInt("Actions", 5);
@@ -71,9 +85,20 @@ public class PlayerTopDownMovement : MonoBehaviour
             dialogue.text = "Well, it's gotten late.";
             GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
         }
+        if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 1)
+        {
+            PlayerPrefs.SetInt("CanMove?", 0);
+            canvas.GetComponent<Canvas>().enabled = true;
+            dialogue.text = "Uh oh, I'm out of time.";
+            GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
+        }
         if (PlayerPrefs.GetInt("Alive?") == 0)
         {
             PlayerPrefs.SetInt("Alive?", 2); //2 = alive, 1 = dead
+        }
+        if (PlayerPrefs.GetInt("Alive?") == 1)
+        {
+            gameObject.layer = 8;
         }
     }
 

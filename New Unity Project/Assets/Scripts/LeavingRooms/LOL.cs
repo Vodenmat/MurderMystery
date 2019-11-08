@@ -8,7 +8,6 @@ public class LOL : MonoBehaviour
     {
 
         PlayerPrefs.SetString("CurrentRoom", SceneManager.GetActiveScene().name);
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)

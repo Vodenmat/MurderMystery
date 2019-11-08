@@ -16,7 +16,7 @@ public class KillerAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("Alive?") == 1)
+        if (PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("Dead") == 0)
         {
             timer += Time.deltaTime;
             if (timer > 5)

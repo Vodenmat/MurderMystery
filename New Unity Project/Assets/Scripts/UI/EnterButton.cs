@@ -50,7 +50,7 @@ public class EnterButton : MonoBehaviour
             PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
             SceneManager.LoadScene("NerdRoom");
         }
-        else if (PlayerPrefs.GetInt("EnterRoom#") == 6 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && PlayerPrefs.GetInt("CanCelebRoom") == 1)
+        else if (PlayerPrefs.GetInt("EnterRoom#") == 6 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && (PlayerPrefs.GetInt("CanCelebRoom") == 1 || PlayerPrefs.GetInt("Alive?") == 1))
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
@@ -62,7 +62,7 @@ public class EnterButton : MonoBehaviour
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "Sorry, you don't have permission to investigate this room";
         }
-        else if (PlayerPrefs.GetInt("EnterRoom#") == 7 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && PlayerPrefs.GetInt("CanOffice") == 1)
+        else if (PlayerPrefs.GetInt("EnterRoom#") == 7 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1 && (PlayerPrefs.GetInt("CanOffice") == 1 || PlayerPrefs.GetInt("Alive?") == 1))
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
             buttonWarningText.text = "";
