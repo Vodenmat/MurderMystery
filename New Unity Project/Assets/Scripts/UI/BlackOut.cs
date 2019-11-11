@@ -29,9 +29,10 @@ public class BlackOut : MonoBehaviour
             GetComponent<SpriteRenderer>().color = blackColor;
             if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 2)
             {
+               // PlayerPrefs.SetInt("CanMove?", 1);
                 SceneManager.LoadScene("YourRoom");
             }
-            if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1)
+            else if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1)
             {
                 SceneManager.LoadScene("Accusation");
             }
@@ -48,6 +49,7 @@ public class BlackOut : MonoBehaviour
             {
                 PlayerPrefs.SetInt("Alive?", 1);
                 PlayerPrefs.SetInt("Actions", 5);
+                PlayerPrefs.SetInt("CanMove?", 1);
                 SceneManager.LoadScene("YourRoom");
             }
             if (timer > 16)
