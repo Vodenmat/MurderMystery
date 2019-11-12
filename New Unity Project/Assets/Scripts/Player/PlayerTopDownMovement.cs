@@ -67,7 +67,6 @@ public class PlayerTopDownMovement : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Actions") == 1)
         {
             PlayerPrefs.SetInt("Alive?", 1);
-            PlayerPrefs.SetInt("Actions", 5);
             GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
             /*transform.position = new Vector3(7.46f, -2.41f, 0);
             transform.up = new Vector3(0,0,0);
@@ -86,7 +85,7 @@ public class PlayerTopDownMovement : MonoBehaviour
             dialogue.text = "Well, it's gotten late.";
             GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
         }
-        else if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("CanMove?") == 0)
+        else if (PlayerPrefs.GetInt("Actions") == 0 && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("CanMove?") == 0)
         {
             PlayerPrefs.SetInt("CanMove?", 0);
             canvas.GetComponent<Canvas>().enabled = true;

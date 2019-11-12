@@ -7,6 +7,7 @@ public class StephenDialogue : MonoBehaviour
 {
     public GameObject dialogueCanvas;
     public Text dialogue;
+    public GameObject blackOut;
     bool timerGoing = false;
     float timer = 0;
     System.Random rnd = new System.Random();
@@ -24,12 +25,132 @@ public class StephenDialogue : MonoBehaviour
         GetComponent<Canvas>().enabled = false;
         PlayerPrefs.SetInt("CanMove?", 1);
     }
-    public void WhoKilled()
+    public void Manager()
     {
         GetComponent<Canvas>().enabled = false;
         dialogueCanvas.GetComponent<Canvas>().enabled = true;
         dialogueList.Add("I don't know...");
-        dialogueList.Add("Tell me who you think and maybe that'll jog my memory");
+        rndSuspect = rnd.Next(1, 4);
+        if (PlayerPrefs.GetInt("Murderer") == 4 && (rndSuspect == 1 || rndSuspect == 2))
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") == 4 && rndSuspect == 3)
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") != 4 && rndSuspect == 1)
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        dialogue.text = dialogueList[0];
+        timer = 0;
+        timerGoing = true;
+    }
+    public void Celebrity()
+    {
+        GetComponent<Canvas>().enabled = false;
+        dialogueCanvas.GetComponent<Canvas>().enabled = true;
+        dialogueList.Add("I don't know...");
+        rndSuspect = rnd.Next(1, 4);
+        if (PlayerPrefs.GetInt("Murderer") == 2 && (rndSuspect == 1 || rndSuspect == 2))
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") == 2 && rndSuspect == 3)
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") != 2 && rndSuspect == 1)
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        dialogue.text = dialogueList[0];
+        timer = 0;
+        timerGoing = true;
+    }
+    public void Nerd()
+    {
+        GetComponent<Canvas>().enabled = false;
+        dialogueCanvas.GetComponent<Canvas>().enabled = true;
+        dialogueList.Add("I don't know...");
+        rndSuspect = rnd.Next(1, 4);
+        if (PlayerPrefs.GetInt("Murderer") == 1 && (rndSuspect == 1 || rndSuspect == 2))
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") == 1 && rndSuspect == 3)
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") != 1 && rndSuspect == 1)
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        dialogue.text = dialogueList[0];
+        timer = 0;
+        timerGoing = true;
+    }
+    public void OldMan()
+    {
+        GetComponent<Canvas>().enabled = false;
+        dialogueCanvas.GetComponent<Canvas>().enabled = true;
+        dialogueList.Add("I don't know...");
+        rndSuspect = rnd.Next(1, 4);
+        if (PlayerPrefs.GetInt("Murderer") == 3 && (rndSuspect == 1 || rndSuspect == 2))
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") == 3 && rndSuspect == 3)
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") != 3 && rndSuspect == 1)
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        dialogue.text = dialogueList[0];
+        timer = 0;
+        timerGoing = true;
+    }
+    public void Receptionist()
+    {
+        GetComponent<Canvas>().enabled = false;
+        dialogueCanvas.GetComponent<Canvas>().enabled = true;
+        dialogueList.Add("I don't know...");
+        rndSuspect = rnd.Next(1, 4);
+        if (PlayerPrefs.GetInt("Murderer") == 5 && (rndSuspect == 1 || rndSuspect == 2))
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") == 5 && rndSuspect == 3)
+        {
+            dialogueList.Add("I don't think so...?");
+        }
+        else if (PlayerPrefs.GetInt("Murderer") != 5 && rndSuspect == 1)
+        {
+            dialogueList.Add("I think so...?");
+        }
+        else
+        {
+            dialogueList.Add("I don't think so...?");
+        }
         dialogue.text = dialogueList[0];
         timer = 0;
         timerGoing = true;
@@ -43,7 +164,7 @@ public class StephenDialogue : MonoBehaviour
             timer = 0;
             dialogue.text = "";
             dialogueList.RemoveAt(0);
-            SceneManager.LoadScene("PreAccuse");
+            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
         }
         else
         {

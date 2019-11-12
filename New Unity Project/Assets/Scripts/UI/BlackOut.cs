@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class BlackOut : MonoBehaviour
 {
     public Color blackColor;
+    public GameObject stephen;
     float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(PlayerPrefs.GetString("Actions"));
         if (PlayerPrefs.GetInt("Actions") == 1)
         {
             blackColor.a = 0;
@@ -32,7 +34,7 @@ public class BlackOut : MonoBehaviour
                // PlayerPrefs.SetInt("CanMove?", 1);
                 SceneManager.LoadScene("YourRoom");
             }
-            else if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1)
+            else if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1 && stephen.GetComponent<SpriteRenderer>().enabled == true)
             {
                 SceneManager.LoadScene("Accusation");
             }
@@ -48,7 +50,7 @@ public class BlackOut : MonoBehaviour
             if (timer > 18)
             {
                 PlayerPrefs.SetInt("Alive?", 1);
-                PlayerPrefs.SetInt("Actions", 5);
+                PlayerPrefs.SetInt("Actions", 1);
                 PlayerPrefs.SetInt("CanMove?", 1);
                 SceneManager.LoadScene("YourRoom");
             }
