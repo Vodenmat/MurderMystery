@@ -764,6 +764,16 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 2115966537}
+    - target: {fileID: 7204272329942290245, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204272329942290245, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 8.26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a05dbf19089fb2049a194deabb1f796e, type: 3}
 --- !u!1 &1411066737
@@ -1806,7 +1816,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2084956499
 GameObject:
