@@ -318,6 +318,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2840160467976608935, guid: add8fce71979afc4fbf0d7cf11fc03b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 799688601}
+    - target: {fileID: 2840160467976608935, guid: add8fce71979afc4fbf0d7cf11fc03b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Speaking
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add8fce71979afc4fbf0d7cf11fc03b0, type: 3}
 --- !u!223 &188866198 stripped
@@ -419,7 +429,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &691176858
 GameObject:
@@ -513,6 +523,7 @@ GameObject:
   - component: {fileID: 799688598}
   - component: {fileID: 799688600}
   - component: {fileID: 799688599}
+  - component: {fileID: 799688601}
   m_Layer: 0
   m_Name: StephenAura
   m_TagString: Untagged
@@ -599,6 +610,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &799688601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799688597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d0863f48a3626498b033b7d6da9a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 188866199}
+  speakButton: {fileID: 1654174304}
+  speakButtonText: {fileID: 1549316120}
+  managerCanvas: {fileID: 0}
+  recepCanvas: {fileID: 0}
+  celebCanvas: {fileID: 0}
+  nerdCanvas: {fileID: 0}
+  oldManCanvas: {fileID: 0}
+  stephenCanvas: {fileID: 0}
 --- !u!1 &946058219
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +1005,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killer: {fileID: 9100000, guid: dc1d6ef73b32a7d4bb4f1498a2cb470b, type: 2}
+--- !u!114 &1549316120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2840160468258714502, guid: add8fce71979afc4fbf0d7cf11fc03b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 188866197}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1654174304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2840160467976608933, guid: add8fce71979afc4fbf0d7cf11fc03b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 188866197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1702019078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1095,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 1849892365518514299, guid: 3cc24835fad258e4ebfc43954d7ef477,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6156863}
   m_FlipX: 0
   m_FlipY: 0
@@ -1491,6 +1542,16 @@ PrefabInstance:
       propertyPath: stephen
       value: 
       objectReference: {fileID: 1702019078}
+    - target: {fileID: 7204272329942290245, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 8.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204272329942290245, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a05dbf19089fb2049a194deabb1f796e, type: 3}
 --- !u!1001 &1301259271367333458

@@ -173,7 +173,7 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             PlayerPrefs.SetString("SpeakingTo", "OldMan");
         }
-        else if (collision.gameObject.name == "StephenAura" && PlayerPrefs.GetInt("Alive?") == 1)
+        else if (collision.gameObject.name == "StephenAura" && stephen.GetComponent<SpriteRenderer>().enabled == true)
         {
             PlayerPrefs.SetString("SpeakingTo", "Stephen");
         }
