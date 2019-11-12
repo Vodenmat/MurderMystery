@@ -6,12 +6,14 @@ public class LOL : MonoBehaviour
 {
     void Start()
     {
-
         PlayerPrefs.SetString("CurrentRoom", SceneManager.GetActiveScene().name);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene("Hallway");      
+        if (PlayerPrefs.GetInt("Alive?") == 2)
+        {
+            SceneManager.LoadScene("Hallway");      
+        }
     }
 }

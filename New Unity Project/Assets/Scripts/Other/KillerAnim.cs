@@ -46,6 +46,7 @@ public class KillerAnim : MonoBehaviour
             else if (GetComponent<SpriteRenderer>().enabled == true && frames == 55)
             {
                 GetComponent<Animator>().runtimeAnimatorController = killer;
+                PlayerPrefs.SetInt("Dead", 1);
             }
         }
     }

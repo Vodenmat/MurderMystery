@@ -10,6 +10,7 @@ public class PlayerTopDownMovement : MonoBehaviour
     public RuntimeAnimatorController ghost;
     public Canvas canvas;
     public Text dialogue;
+    public GameObject stephen;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +54,7 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             transform.position = new Vector3(-5, 11, 0);
         }
-        if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("Entered?") == 0)
+        if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("Entered?") == 0 && PlayerPrefs.GetInt("CanMove?") == 1)
         {
             PlayerPrefs.SetInt("Entered?", 1);
             PlayerPrefs.SetInt("CanMove?", 1);
@@ -85,7 +86,7 @@ public class PlayerTopDownMovement : MonoBehaviour
             dialogue.text = "Well, it's gotten late.";
             GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
         }
-        if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 1)
+        else if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("CanMove?") == 0)
         {
             PlayerPrefs.SetInt("CanMove?", 0);
             canvas.GetComponent<Canvas>().enabled = true;
@@ -143,9 +144,11 @@ public class PlayerTopDownMovement : MonoBehaviour
     }
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "HallDoor")
+        if (collision.gameObject.tag == "plus" && PlayerPrefs.GetInt("Alive?") == 1)
         {
-            SceneManager.LoadScene("Hallway");
+            dialogue.text = "Wha- I can't leave!";
+            stephen.GetComponent<SpriteRenderer>().enabled = true;
+            stephen.GetComponent<CircleCollider2D>().enabled = true;
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -169,6 +172,10 @@ public class PlayerTopDownMovement : MonoBehaviour
         else if (collision.gameObject.name == "OldManAura")
         {
             PlayerPrefs.SetString("SpeakingTo", "OldMan");
+        }
+        else if (collision.gameObject.name == "StephenAura" && PlayerPrefs.GetInt("Alive?") == 1)
+        {
+            PlayerPrefs.SetString("SpeakingTo", "Stephen");
         }
     }
 }

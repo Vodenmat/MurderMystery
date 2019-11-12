@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Accusation.unity
     guid: ed65f4ee1332c4542ad5703c539e59e1
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 59531a899a6dc9b439a3c67f75ffc15c
+  - enabled: 1
+    path: Assets/Scenes/Lose Scene.unity
+    guid: e5483d297ca796c4fae05f945d9c42e5
   m_configObjects: {}
