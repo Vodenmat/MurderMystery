@@ -25,7 +25,7 @@ public class BlackOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("Actions") == 1)
+        if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
         {
             blackColor.a = blackColor.a + Time.deltaTime / 3;
             GetComponent<SpriteRenderer>().color = blackColor;
@@ -35,6 +35,15 @@ public class BlackOut : MonoBehaviour
                 SceneManager.LoadScene("YourRoom");
             }
             else if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1 && stephen.GetComponent<SpriteRenderer>().enabled == true)
+            {
+                SceneManager.LoadScene("Accusation");
+            }
+        }
+        else if (PlayerPrefs.GetInt("Actions") == 1 && stephen.GetComponent<SpriteRenderer>().enabled == true)
+        {
+            blackColor.a = blackColor.a + Time.deltaTime / 3;
+            GetComponent<SpriteRenderer>().color = blackColor;
+            if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1)
             {
                 SceneManager.LoadScene("Accusation");
             }

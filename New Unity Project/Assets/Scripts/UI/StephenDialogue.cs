@@ -164,7 +164,7 @@ public class StephenDialogue : MonoBehaviour
             timer = 0;
             dialogue.text = "";
             dialogueList.RemoveAt(0);
-            PlayerPrefs.SetInt("Actions", PlayerPrefs.GetInt("Actions") - 1);
+            GameObject fade = Instantiate(blackOut, new Vector3(-3.91f, 8.4f, 0), Quaternion.identity);
         }
         else
         {
