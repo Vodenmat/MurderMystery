@@ -2535,7 +2535,8 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1417366935789454764, guid: 05153e8677e31c746b05ebbfea624e5e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 05153e8677e31c746b05ebbfea624e5e, type: 3}
 --- !u!1001 &702733385
 PrefabInstance:
@@ -4106,7 +4107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
