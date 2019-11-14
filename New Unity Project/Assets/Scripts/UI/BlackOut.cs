@@ -27,7 +27,8 @@ public class BlackOut : MonoBehaviour
     {
         if (GetComponent<SpriteRenderer>().enabled == true)
         {
-
+            Debug.Log(PlayerPrefs.GetInt("Actions"));
+            Debug.Log(PlayerPrefs.GetInt("Alive?"));
             if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
             {
                 blackColor.a = blackColor.a + Time.deltaTime / 3;
@@ -42,7 +43,7 @@ public class BlackOut : MonoBehaviour
             {
                 blackColor.a = blackColor.a + Time.deltaTime / 3;
                 GetComponent<SpriteRenderer>().color = blackColor;
-                if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1)
+                if (blackColor.a > .99)
                 {
                     SceneManager.LoadScene("Accusation");
                 }

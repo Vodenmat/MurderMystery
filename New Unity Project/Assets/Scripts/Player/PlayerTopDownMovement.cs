@@ -82,7 +82,7 @@ public class PlayerTopDownMovement : MonoBehaviour
         if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
         {
             PlayerPrefs.SetInt("CanMove?", 0);
-            PlayerPrefs.SetInt("Actions", 2);
+            //PlayerPrefs.SetInt("Actions", 2);
             canvas.GetComponent<Canvas>().enabled = true;
             dialogue.text = "Well, it's gotten late.";
             GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
