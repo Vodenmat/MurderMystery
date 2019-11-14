@@ -13,6 +13,7 @@ public class Dialogue : MonoBehaviour
     public Canvas nerdCanvas;
     public Canvas oldManCanvas;
     public Canvas stephenCanvas;
+    public GameObject stephen;
     float timer = 0;
     // Start is called before the first frame update
     void Start()
@@ -57,12 +58,12 @@ public class Dialogue : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt("CanMove?") == 1 && PlayerPrefs.GetInt("Alive?") == 2 && PlayerPrefs.GetInt("Actions") != 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura" || this.gameObject.name == "NerdAura" || this.gameObject.name == "OldManAura" || this.gameObject.name == "StephenAura"))
+        if (PlayerPrefs.GetInt("CanMove?") == 1 && PlayerPrefs.GetInt("Alive?") == 2 && PlayerPrefs.GetInt("Actions") != 1 && (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura" || this.gameObject.name == "NerdAura" || this.gameObject.name == "OldManAura" || (this.gameObject.name == "StephenAura" && stephen.GetComponent<SpriteRenderer>().enabled == true)))
         {
             speakButton.GetComponent<Image>().enabled = true;
             speakButtonText.text = "Talk?";
         }
-        if (PlayerPrefs.GetInt("CanMove?") == 1 && this.gameObject.name == "StephenAura")
+        if (PlayerPrefs.GetInt("CanMove?") == 1 && this.gameObject.name == "StephenAura" && stephen.GetComponent<SpriteRenderer>().enabled == true)
         {
             speakButton.GetComponent<Image>().enabled = true;
             speakButtonText.text = "Talk?";
@@ -70,12 +71,12 @@ public class Dialogue : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura" || this.gameObject.name == "NerdAura" || this.gameObject.name == "OldManAura" || this.gameObject.name == "StephenAura")
+        if (this.gameObject.name == "ManagerAura" || this.gameObject.name == "ReceptionistAura" || this.gameObject.name == "CelebrityAura" || this.gameObject.name == "NerdAura" || this.gameObject.name == "OldManAura" || (this.gameObject.name == "StephenAura" && stephen.GetComponent<SpriteRenderer>().enabled == true))
         {
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";
         }
-        if (PlayerPrefs.GetInt("CanMove?") == 1 && this.gameObject.name == "StephenAura")
+        if (PlayerPrefs.GetInt("CanMove?") == 1 && this.gameObject.name == "StephenAura" && stephen.GetComponent<SpriteRenderer>().enabled == true)
         {
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";

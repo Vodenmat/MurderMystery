@@ -159,12 +159,13 @@ public class StephenDialogue : MonoBehaviour
     {
         if (dialogueList.Count == 1)
         {
-            PlayerPrefs.SetInt("CanMove?", 1);
             timerGoing = false;
             timer = 0;
             dialogue.text = "";
             dialogueList.RemoveAt(0);
-            GameObject fade = Instantiate(blackOut, new Vector3(-3.91f, 8.4f, 0), Quaternion.identity);
+            //GameObject fade = Instantiate(blackOut, new Vector3(-3.91f, 8.4f, 0), Quaternion.identity);
+            blackOut.GetComponent<SpriteRenderer>().enabled = true;
+            Debug.Log(PlayerPrefs.GetInt("Alive?"));
         }
         else
         {

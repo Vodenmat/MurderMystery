@@ -25,49 +25,58 @@ public class BlackOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
+        if (GetComponent<SpriteRenderer>().enabled == true)
         {
-            blackColor.a = blackColor.a + Time.deltaTime / 3;
-            GetComponent<SpriteRenderer>().color = blackColor;
-            if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 2)
+
+            if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
             {
-               // PlayerPrefs.SetInt("CanMove?", 1);
-                SceneManager.LoadScene("YourRoom");
+                blackColor.a = blackColor.a + Time.deltaTime / 3;
+                GetComponent<SpriteRenderer>().color = blackColor;
+                if (blackColor.a > .99)
+                {
+                   // PlayerPrefs.SetInt("CanMove?", 1);
+                    SceneManager.LoadScene("YourRoom");
+                }
             }
-            else if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1 && stephen.GetComponent<SpriteRenderer>().enabled == true)
+            else if (PlayerPrefs.GetInt("Actions") == 1 && stephen.GetComponent<SpriteRenderer>().enabled == true)
             {
-                SceneManager.LoadScene("Accusation");
+                blackColor.a = blackColor.a + Time.deltaTime / 3;
+                GetComponent<SpriteRenderer>().color = blackColor;
+                if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1)
+                {
+                    SceneManager.LoadScene("Accusation");
+                }
             }
-        }
-        else if (PlayerPrefs.GetInt("Actions") == 1 && stephen.GetComponent<SpriteRenderer>().enabled == true)
-        {
-            blackColor.a = blackColor.a + Time.deltaTime / 3;
-            GetComponent<SpriteRenderer>().color = blackColor;
-            if (blackColor.a > .99 && PlayerPrefs.GetInt("Alive?") == 1)
+            else if (PlayerPrefs.GetInt("Alive?") == 1 && stephen.GetComponent<SpriteRenderer>().enabled == true)
             {
-                SceneManager.LoadScene("Accusation");
+                blackColor.a = blackColor.a + Time.deltaTime / 3;
+                GetComponent<SpriteRenderer>().color = blackColor;
+                if (blackColor.a > .99)
+                {
+                    SceneManager.LoadScene("Accusation");
+                }
             }
-        }
-        else
-        {
-            timer += Time.deltaTime;
-            blackColor.a = blackColor.a - Time.deltaTime / 3;
-            if (blackColor.a < .5f)
+            else
             {
-                blackColor.a = .5f;
+                timer += Time.deltaTime;
+                blackColor.a = blackColor.a - Time.deltaTime / 3;
+                if (blackColor.a < .5f)
+                {
+                    blackColor.a = .5f;
+                }
+                if (timer > 18)
+                {
+                    PlayerPrefs.SetInt("Alive?", 1);
+                    PlayerPrefs.SetInt("Actions", 1);
+                    PlayerPrefs.SetInt("CanMove?", 1);
+                    SceneManager.LoadScene("YourRoom");
+                }
+                if (timer > 16)
+                {
+                    blackColor.a = 255;
+                }
+                GetComponent<SpriteRenderer>().color = blackColor;
             }
-            if (timer > 18)
-            {
-                PlayerPrefs.SetInt("Alive?", 1);
-                PlayerPrefs.SetInt("Actions", 1);
-                PlayerPrefs.SetInt("CanMove?", 1);
-                SceneManager.LoadScene("YourRoom");
-            }
-            if (timer > 16)
-            {
-                blackColor.a = 255;
-            }
-            GetComponent<SpriteRenderer>().color = blackColor;
         }
     }
 }
