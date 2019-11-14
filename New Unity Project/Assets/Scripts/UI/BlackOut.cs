@@ -11,7 +11,7 @@ public class BlackOut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetString("Actions"));
+        
         if (PlayerPrefs.GetInt("Actions") == 1)
         {
             blackColor.a = 0;
@@ -27,8 +27,7 @@ public class BlackOut : MonoBehaviour
     {
         if (GetComponent<SpriteRenderer>().enabled == true)
         {
-            Debug.Log(PlayerPrefs.GetInt("Actions"));
-            Debug.Log(PlayerPrefs.GetInt("Alive?"));
+           
             if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
             {
                 blackColor.a = blackColor.a + Time.deltaTime / 3;
