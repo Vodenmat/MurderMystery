@@ -41,7 +41,7 @@ public class KillerAnim : MonoBehaviour
                 transform.up = transform.up - new Vector3(-.022f, 0, 0);
                 timer = 0;
                 frames++;
-                Debug.Log(frames);
+              
             }
             else if (GetComponent<SpriteRenderer>().enabled == true && frames == 55)
             {
