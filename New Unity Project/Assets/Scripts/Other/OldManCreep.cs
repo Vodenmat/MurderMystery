@@ -10,11 +10,11 @@ public class OldManCreep : MonoBehaviour
     {
         if (this.gameObject.name == "OldMan" && PlayerPrefs.GetInt("OldManEntered") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
         {
-            transform.position = new Vector3(-6.8f, 2.28f, 0);
+            transform.position = new Vector3(-6.8f, 2.28f, -3);
         }
         else if (this.gameObject.name == "OldMan")
         {
-            transform.position = new Vector3(-4.96f, 3.39f, 0);
+            transform.position = new Vector3(-4.96f, 3.39f, -3);
         }
         PlayerPrefs.SetInt("OldManEntered", 1);
     }

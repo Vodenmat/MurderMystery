@@ -14,6 +14,7 @@ public class PlayerTopDownMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetString("BlackOutMode", "FadeOut");
         if (PlayerPrefs.GetInt("Alive?") == 1)
         {
             GetComponent<Animator>().runtimeAnimatorController = ghost;
@@ -81,6 +82,7 @@ public class PlayerTopDownMovement : MonoBehaviour
         if (PlayerPrefs.GetInt("Actions") == 1 && PlayerPrefs.GetInt("Alive?") == 2)
         {
             PlayerPrefs.SetInt("CanMove?", 0);
+            //PlayerPrefs.SetInt("Actions", 2);
             canvas.GetComponent<Canvas>().enabled = true;
             dialogue.text = "Well, it's gotten late.";
             GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
@@ -105,6 +107,7 @@ public class PlayerTopDownMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerPrefs.SetString("BlackOutMode", "FadeIn");
         Vector3 oldPosition;
         if (PlayerPrefs.GetInt("CanMove?") == 1)
         {
