@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 256195357}
   - component: {fileID: 256195356}
   - component: {fileID: 256195359}
+  - component: {fileID: 256195360}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -787,6 +788,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257d4c17277ebf04882335b46033383b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &256195360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256195355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa44ec0e4cd95840a4f1bd12df45ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1730734417}
 --- !u!224 &318602617 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7204272329942290245, guid: a05dbf19089fb2049a194deabb1f796e,
@@ -2720,7 +2734,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13252263, y: 0.006483078}
+  m_Offset: {x: -0.056910664, y: 0.006483078}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2731,7 +2745,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.391131, y: 1.0027986}
+  m_Size: {x: 0.23990706, y: 1.0027986}
   m_EdgeRadius: 0
 --- !u!212 &754038162
 SpriteRenderer:
@@ -3218,6 +3232,7 @@ GameObject:
   - component: {fileID: 1022948449}
   - component: {fileID: 1022948448}
   - component: {fileID: 1022948451}
+  - component: {fileID: 1022948452}
   m_Layer: 0
   m_Name: Receptionist
   m_TagString: Untagged
@@ -3298,14 +3313,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022948447}
-  m_LocalRotation: {x: 0, y: 0, z: 0.5990236, w: 0.80073136}
-  m_LocalPosition: {x: -3.91, y: 8.4, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.78, y: 7.55, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 1962019389}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 73.6}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1022948451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3318,6 +3333,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257d4c17277ebf04882335b46033383b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1022948452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022948447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa44ec0e4cd95840a4f1bd12df45ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1730734417}
 --- !u!1 &1023179920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,6 +4283,9 @@ MonoBehaviour:
   nerdCanvas: {fileID: 0}
   oldManCanvas: {fileID: 0}
   stephenCanvas: {fileID: 0}
+  stephen: {fileID: 0}
+  celeb: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1388645830
 GameObject:
   m_ObjectHideFlags: 0
@@ -4952,6 +4983,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729435031}
   m_CullTransparentMesh: 0
+--- !u!1 &1730734417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4053372878438224940, guid: a05dbf19089fb2049a194deabb1f796e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4053372879011717061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1743307621
 GameObject:
   m_ObjectHideFlags: 0
@@ -8746,9 +8783,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07118976, y: -0.094973765}
+  m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.54498994
+  m_Radius: 0.4752548
 --- !u!114 &1962019391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8770,6 +8807,9 @@ MonoBehaviour:
   nerdCanvas: {fileID: 0}
   oldManCanvas: {fileID: 0}
   stephenCanvas: {fileID: 0}
+  stephen: {fileID: 0}
+  celeb: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &1962019392
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9022,6 +9062,9 @@ MonoBehaviour:
   nerdCanvas: {fileID: 0}
   oldManCanvas: {fileID: 0}
   stephenCanvas: {fileID: 0}
+  stephen: {fileID: 0}
+  celeb: {fileID: 1795871640}
+  player: {fileID: 1730734417}
 --- !u!212 &2064204073
 SpriteRenderer:
   m_ObjectHideFlags: 0

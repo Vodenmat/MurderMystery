@@ -14,6 +14,8 @@ public class Dialogue : MonoBehaviour
     public Canvas oldManCanvas;
     public Canvas stephenCanvas;
     public GameObject stephen;
+    public GameObject celeb;
+    public GameObject player;
     float timer = 0;
     // Start is called before the first frame update
     void Start()
@@ -62,6 +64,10 @@ public class Dialogue : MonoBehaviour
         {
             speakButton.GetComponent<Image>().enabled = true;
             speakButtonText.text = "Talk?";
+            if (this.gameObject.name == "CelebrityAura")
+            {
+                celeb.transform.up = celeb.transform.position - player.transform.position;
+            }
         }
         if (PlayerPrefs.GetInt("CanMove?") == 1 && this.gameObject.name == "StephenAura" && stephen.GetComponent<SpriteRenderer>().enabled == true)
         {
@@ -75,6 +81,7 @@ public class Dialogue : MonoBehaviour
         {
             speakButton.GetComponent<Image>().enabled = false;
             speakButtonText.text = "";
+            celeb.transform.up = new Vector3(90, 0, 0);
         }
         if (PlayerPrefs.GetInt("CanMove?") == 1 && this.gameObject.name == "StephenAura" && stephen.GetComponent<SpriteRenderer>().enabled == true)
         {

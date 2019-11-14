@@ -75,6 +75,7 @@ public class BlackOut : MonoBehaviour
                 if (timer > 16)
                 {
                     blackColor.a = 255;
+                    GetComponent<AudioSource>().enabled = true;
                 }
                 GetComponent<SpriteRenderer>().color = blackColor;
             }
