@@ -19,7 +19,14 @@ public class NotRickRoll : MonoBehaviour
     {
         if (collision.gameObject.name == "New Sprite")
         {
-            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            if (this.gameObject.name == "DoctorWho")
+            {
+                System.Diagnostics.Process.Start("https://www.google.com/doodles/doctor-whos-50th-anniversary");
+            }
+            else
+            {
+                System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            }
         }
     }
 }

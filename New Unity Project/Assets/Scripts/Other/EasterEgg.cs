@@ -17,9 +17,17 @@ public class EasterEgg : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "New Sprite")
+        if (collision.gameObject.name == "New Sprite" && this.gameObject.name == "EasterEgg")
         {
             System.Diagnostics.Process.Start("https://www.google.com/doodles/30th-anniversary-of-pac-man");
+        }
+        else if (this.gameObject.name == "DoctorWho")
+        {
+            System.Diagnostics.Process.Start("https://www.google.com/doodles/doctor-whos-50th-anniversary");
+        }
+        else
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
     }
 }
