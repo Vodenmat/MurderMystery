@@ -109,7 +109,7 @@ public class PlayerTopDownMovement : MonoBehaviour
     {
         PlayerPrefs.SetString("BlackOutMode", "FadeIn");
         Vector3 oldPosition;
-        if (PlayerPrefs.GetInt("CanMove?") == 1)
+        if (PlayerPrefs.GetInt("CanMove?") == 1 && Time.timeScale == 1)
         {
             oldPosition = (transform.position);
             Vector3 mousePosition = Input.mousePosition;
