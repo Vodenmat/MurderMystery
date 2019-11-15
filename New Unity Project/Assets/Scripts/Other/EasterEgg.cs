@@ -6,6 +6,7 @@ public class EasterEgg : MonoBehaviour
 {
     int easter = 0;
     int easter2 = 0;
+    int supereaster = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,27 @@ public class EasterEgg : MonoBehaviour
             {
                 System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=m9tdKwdxnj0");
             }
+            if (Input.GetKeyDown("p") && supereaster == 0)
+            {
+                supereaster++;
+            }
+            if (Input.GetKeyDown("a") && supereaster == 1)
+            {
+                supereaster++;
+            }
+            if (Input.GetKeyDown("p") && supereaster == 2)
+            {
+                supereaster++;
+            }
+            if (Input.GetKeyDown("e") && supereaster == 3)
+            {
+                supereaster++;
+            }
+            if (Input.GetKeyDown("r") && supereaster == 4)
+            {
+                SceneManager.LoadScene("PMainMenu");
+            }
+
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
