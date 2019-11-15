@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class EasterEgg : MonoBehaviour
 {
+    int easter = 0;
+    int easter2 = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,37 @@ public class EasterEgg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            if (Input.GetKeyDown("z") && easter == 0)
+            {
+                easter++;
+            }
+            if (Input.GetKeyDown("e") && easter == 1)
+            {
+                easter++;
+            }
+            if (Input.GetKeyDown("r") && easter == 2)
+            {
+                easter++;
+            }
+            if (Input.GetKeyDown("o") && easter == 3)
+            {
+                System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=Ze3G5EksIQw");
+            }
+            if (Input.GetKeyDown("m") && easter2 == 0)
+            {
+                easter2++;
+            }
+            if (Input.GetKeyDown("r") && easter2 == 1)
+            {
+                easter2++;
+            }
+            if (Input.GetKeyDown("a") && easter2 == 2)
+            {
+                System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=m9tdKwdxnj0");
+            }
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
