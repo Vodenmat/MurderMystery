@@ -8,6 +8,8 @@ TagManager:
   - plus
   - minus
   - Ghost
+  - EBullet
+  - Music
   layers:
   - Default
   - TransparentFX
