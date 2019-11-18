@@ -55,10 +55,8 @@ public class PlayerTopDownMovement : MonoBehaviour
         {
             transform.position = new Vector3(-5, 11, 0);
         }
-        if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("Entered?") == 0 && PlayerPrefs.GetInt("CanMove?") == 1)
+        if (SceneManager.GetActiveScene().name == "YourRoom" && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("CanMove?") == 1)
         {
-            PlayerPrefs.SetInt("Entered?", 1);
-            PlayerPrefs.SetInt("CanMove?", 1);
             canvas.GetComponent<Canvas>().enabled = true;
             dialogue.text = "What the... I feel lighter.";
             gameObject.layer = 8;
@@ -89,7 +87,6 @@ public class PlayerTopDownMovement : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("Actions") == 0 && PlayerPrefs.GetInt("Alive?") == 1 && PlayerPrefs.GetInt("CanMove?") == 0)
         {
-            PlayerPrefs.SetInt("CanMove?", 0);
             canvas.GetComponent<Canvas>().enabled = true;
             dialogue.text = "Uh oh, I'm out of time.";
             GameObject fade = Instantiate(prefab, transform.position, Quaternion.identity);
@@ -101,6 +98,10 @@ public class PlayerTopDownMovement : MonoBehaviour
         if (PlayerPrefs.GetInt("Alive?") == 1)
         {
             gameObject.layer = 8;
+        }
+        if (SceneManager.GetActiveScene().name == "YourRoom")
+        {
+            Debug.Log(PlayerPrefs.GetInt("CanMove?"));
         }
     }
 

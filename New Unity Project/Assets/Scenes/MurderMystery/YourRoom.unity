@@ -644,7 +644,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1578,6 +1578,7 @@ GameObject:
   - component: {fileID: 1314421599}
   - component: {fileID: 1314421598}
   - component: {fileID: 1314421600}
+  - component: {fileID: 1314421601}
   m_Layer: 5
   m_Name: YahYeet
   m_TagString: Untagged
@@ -1601,7 +1602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 569, y: 293}
+  m_AnchoredPosition: {x: 67, y: 60}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314421598
@@ -1660,6 +1661,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actions: 10
   actionText: {fileID: 1314421598}
+--- !u!114 &1314421601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314421596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2263d1054c7394b4a821dc8e958e94fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1341625376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2536,6 +2549,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8590277941728183527, guid: a15a1f9bcbe86a645b16b07bf9fc52c1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8590277942353803109, guid: a15a1f9bcbe86a645b16b07bf9fc52c1,
         type: 3}
       propertyPath: m_Color.r
@@ -2698,11 +2716,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Sprite
       objectReference: {fileID: 0}
-    - target: {fileID: -5651085536378564107, guid: a05dbf19089fb2049a194deabb1f796e,
-        type: 3}
-      propertyPath: actionText
-      value: 
-      objectReference: {fileID: 1314421598}
     - target: {fileID: 7204272329942290245, guid: a05dbf19089fb2049a194deabb1f796e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2713,6 +2726,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 2.19
       objectReference: {fileID: 0}
+    - target: {fileID: -5651085536378564107, guid: a05dbf19089fb2049a194deabb1f796e,
+        type: 3}
+      propertyPath: actionText
+      value: 
+      objectReference: {fileID: 1314421598}
     - target: {fileID: 4053372878438224937, guid: a05dbf19089fb2049a194deabb1f796e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2923,31 +2941,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stephen
       objectReference: {fileID: 0}
-    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
-        type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 188866199}
-    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
-        type: 3}
-      propertyPath: speakButton
-      value: 
-      objectReference: {fileID: 1654174304}
-    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
-        type: 3}
-      propertyPath: speakButtonText
-      value: 
-      objectReference: {fileID: 1549316120}
-    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
-        type: 3}
-      propertyPath: stephenCanvas
-      value: 
-      objectReference: {fileID: 1103911834}
-    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
-        type: 3}
-      propertyPath: stephen
-      value: 
-      objectReference: {fileID: 1702019078}
     - target: {fileID: 308087560335609498, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3003,6 +2996,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 188866199}
+    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
+        type: 3}
+      propertyPath: speakButton
+      value: 
+      objectReference: {fileID: 1654174304}
+    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
+        type: 3}
+      propertyPath: speakButtonText
+      value: 
+      objectReference: {fileID: 1549316120}
+    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
+        type: 3}
+      propertyPath: stephenCanvas
+      value: 
+      objectReference: {fileID: 1103911834}
+    - target: {fileID: 308087559158614282, guid: 08e80a8ce4b3d064caeb48aef61ff19d,
+        type: 3}
+      propertyPath: stephen
+      value: 
+      objectReference: {fileID: 1702019078}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e80a8ce4b3d064caeb48aef61ff19d, type: 3}
 --- !u!1001 &1301259271367333458

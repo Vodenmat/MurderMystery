@@ -26,8 +26,7 @@ public class EnterButton : MonoBehaviour
         if (PlayerPrefs.GetInt("EnterRoom#") == 1)
         {
             PlayerPrefs.SetInt("PlayerKnowsCost", 0);
-            buttonWarningText.text = "";
-            SceneManager.LoadScene("YourRoom");
+            buttonWarningText.text = "You have no reason to go in there.";
         }
         else if (PlayerPrefs.GetInt("EnterRoom#") == 3 && PlayerPrefs.GetInt("PlayerKnowsCost") == 1)
         {

@@ -48,22 +48,27 @@ public class ManagerDialogue : MonoBehaviour
         dialogueCanvas.GetComponent<Canvas>().enabled = true;
         if (PlayerPrefs.GetInt("ManagerSuspects") == 1)
         {
-            dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here, but I'd watch out for Gregory");
+            dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here...");
+            dialogueList.Add("but I'd watch out for Gregory.");
             dialogueList.Add("He just sits in his room, hating social situations.");
         }
         else if (PlayerPrefs.GetInt("ManagerSuspects") == 2)
         {
-            dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here, but I'd watch out for Old Man Wilfred.");
+            dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here...");
+            dialogueList.Add("but I'd watch out for Old Man Wilfred.");
             dialogueList.Add("I don't even know what he does all day, he just lurks around.");
         }
         else if (PlayerPrefs.GetInt("ManagerSuspects") == 3)
         {
-            dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here, but I'd watch out for Tracy.");
-            dialogueList.Add("She was in his room the night of the murder, but she says she didn't see anything.");
+            dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here...");
+            dialogueList.Add("But I'd watch out for Tracy.");
+            dialogueList.Add("She was in his room the night of the murder...");
+            dialogueList.Add("But she says she didn't see anything.");
         }
         else
         {
-            dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here, but I'd watch out for Cheryl, my receptionist.");
+            dialogueList.Add("Well, I'm not sure if I'm allowed to have an opinion here...");
+            dialogueList.Add("But I'd watch out for Cheryl, my receptionist.");
             dialogueList.Add("She was Stephen's ex.  Simple as that.");
         }
         dialogue.text = dialogueList[0];
